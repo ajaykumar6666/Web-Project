@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputScript  library="js" name="jquery.js"></h:outputScript>
+	<h:outputStylesheet library="css" name="default.css"></h:outputStylesheet>
+	<title> <ui:insert name="title"></ui:insert>  
+	</title>
+	</h:head>
+<h:body>
+
+        <div id="top" class="header">OnlineDiary</div>
+        <h2>  <ui:insert name="title"></ui:insert></h2>
+        <div id="content" class="content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+    </h:body>
+</html>

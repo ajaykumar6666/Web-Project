@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<ui:composition xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="master.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+                
+                <ui:define name="title">My Profile</ui:define>
+                
+                <ui:define name="content">
+                Username : 
+                <b>${sessionScope.unamr}</b>
+                <p/>
+                Fullname :  
+                <b>${sessionScope.fullname}</b>
+                <p/>
+                Mobile :  
+                <b>${sessionScope.mobile}</b>
+               <p/>
+               Password:
+                [<a href="changepassword.xhtml">ChangePassword</a>]
+                <p/>
+                Email:
+                <b>${sessionScope.email}</b>
+       
+                </ui:define>
+
+</ui:composition>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<ui:composition xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                template="anonymous.xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<ui:define name="title">Registration</ui:define>
+	
+	<ui:define name="content">
+<script type="text/javascript">
+function validate()
+{
+	var p1=document.getElementById("password");
+	var p2=document.getElementById("confirmpassword");
+	if(p1!=p2)
+		{
+			alert("Sorry!");
+			return false;
+		}
+	return true;
+}
+</script>
+<h:form onsubmit="return validate()">
+	Username<br/>
+	<h:inputText id="unamr" value="#{user.unamr}" p:placeholder="Username" p:required="required"></h:inputText>
+	<p/>
+	Password<br/>
+	<h:inputSecret id="password" value="#{user.password}" p:placeholder="Password" p:required="required"></h:inputSecret>
+	<p/>
+	Confirm Password<br/>
+	<h:inputSecret id="confirmpassword"  p:placeholder="ConfirmPassword" p:required="required"></h:inputSecret>
+	<p/>
+	Full Name<br/>
+	<h:inputText id="fullname" value="#{user.fullname}" p:placeholder="Fullname" p:required="required"></h:inputText>
+	<p/>
+	Email<br/>
+	<h:inputText id="email" value="#{user.email}" p:placeholder="Email" p:required="required" p:type="email"></h:inputText>
+	<p/>
+	Mobile<br/>
+	<h:inputText id="mobile" value="#{user.mobile}" p:pattern="^\d{10}$" p:placeholder="10 Digit Mobile Number" maxlength="10"  p:required="required"></h:inputText>
+	<p/>
+	<h:commandButton value="Register" action="#{user.register}"></h:commandButton>
+	<p/>
+	
+	<a href="login.xhtml">Go Back to User</a>
+	<p/>
+	<h:outputText id="message" value="#{user.message}"></h:outputText>
+
+
+</h:form>
+</ui:define>
+</ui:composition>
